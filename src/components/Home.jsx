@@ -21,6 +21,14 @@ function Home() {
         <div className="home-buttons">
           <a href="#projects" className="btn">View Projects</a>
           <a href="#contact" className="btn secondary-btn">Contact Me</a>
+          <a
+            href={`${import.meta.env.BASE_URL}Wyatt-Chou-Resume.pdf`}
+            className="btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Resume
+          </a>
         </div>
       </motion.div>
     </section>
