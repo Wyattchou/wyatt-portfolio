@@ -15,7 +15,7 @@ This is my personal portfolio built using React.js.
 - Framer Motion
 
 ## Live Site
-https://yourusername.github.io/wyatt-portfolio
+https://Wyattchou.github.io/wyatt-portfolio
 
 ## Setup
 npm install  
