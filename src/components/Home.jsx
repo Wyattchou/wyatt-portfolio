@@ -22,7 +22,7 @@ function Home() {
           <a href="#projects" className="btn">View Projects</a>
           <a href="#contact" className="btn secondary-btn">Contact Me</a>
           <a
-            href={`${import.meta.env.BASE_URL}Wyatt-Chou-Resume.pdf`}
+            href={`${import.meta.env.BASE_URL}Wyatt-Chou-Resume-2026.pdf`}
             className="btn"
             target="_blank"
             rel="noopener noreferrer"
