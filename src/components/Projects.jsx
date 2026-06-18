@@ -4,6 +4,7 @@ import prize from "../assets/PrizeKicks.jpg";
 import report from "../assets/ReportPicture.jpg";
 import review from "../assets/review.jpg";
 import sixseven from "../assets/sixseven.jpg";
+import escape from "../assets/escape.png";
 
 const projects = [
   {
@@ -35,8 +36,16 @@ const projects = [
     desc: "A project exploring YouTube’s evolution through production.",
     img: sixseven,
     link: "https://docs.google.com/document/d/1q9EMDw3Avt2A926N5WDv6vlDTna2cxksk0F8ky2HUc0/edit"
+  },
+  {
+    title: "Escape App",
+    desc: "UX Research Intern | UX Case Study",
+    img: escape,
+    link: "https://docs.google.com/document/d/1vkngy8TKWtdRrnSOoqry8ihbSgRaxmedidhqDhjwdNg/edit?tab=t.0"
   }
 ];
+
+
 
 function Projects() {
   return (
