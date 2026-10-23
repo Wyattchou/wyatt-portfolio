@@ -41,7 +41,8 @@ const projects = [
     title: "Escape App",
     desc: "UX Research Intern | UX Case Study",
     img: escape,
-    link: "https://docs.google.com/document/d/1vkngy8TKWtdRrnSOoqry8ihbSgRaxmedidhqDhjwdNg/edit?tab=t.0"
+    link: `${import.meta.env.BASE_URL}escape-case-study/index.html`,
+    isCaseStudy: true
   }
 ];
 
@@ -69,8 +70,8 @@ function Projects() {
               <img src={p.img} alt={p.title} />
               <h3>{p.title}</h3>
               <p>{p.desc}</p>
-              <a href={p.link} target="_blank" className="btn">
-                View Project
+              <a href={p.link} target={p.isCaseStudy ? undefined : "_blank"} rel={p.isCaseStudy ? undefined : "noopener noreferrer"} className="btn">
+                {p.isCaseStudy ? "Read Case Study" : "View Project"}
               </a>
             </motion.div>
           ))}
