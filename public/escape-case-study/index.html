@@ -1,176 +1,211 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Wyatt Chou's Escape case study: UX research, usability evaluation, and beta feedback planning for an evolving AI wellness app." />
-    <meta name="theme-color" content="#101010" />
-    <title>Escape — Beyond the Interface | Wyatt Chou</title>
-    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to case study</a>
-    <header class="site-header">
-      <a class="wordmark" href="../#home">Wyatt <span>Chou</span></a>
-      <a class="back-link" href="../#projects"><span aria-hidden="true">←</span> Back to projects</a>
-    </header>
-
-    <main id="main">
-      <section class="hero" aria-labelledby="case-title">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Escape / UX Research &amp; Product Design</p>
-          <h1 id="case-title">Beyond the<br /><em>interface.</em></h1>
-          <p class="hero-description">Making an AI wellness experience easier to understand, evaluate, and learn from.</p>
-          <p class="hero-intro">An internship case study in usability, research judgment, and building a more deliberate path from beta participation to useful feedback.</p>
-          <a class="text-link" href="#challenge">Explore the work <span aria-hidden="true">↓</span></a>
-        </div>
-        <aside class="research-note" aria-label="The question behind the work">
-          <p class="eyebrow">The question behind the work</p>
-          <p class="note-question">Can people find their way to a moment of <em>calm?</em></p>
-          <div class="signal" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <p class="note-caption">Clarity before confidence.<br />A working question, not a measured outcome.</p>
-          <div class="note-footer"><span>RESEARCH NOTE</span><span>01 / ESCAPE</span></div>
-        </aside>
-      </section>
-
-      <dl class="project-facts">
-        <div><dt>My role</dt><dd>UX Research Intern<small>Previously UX/UI Design Intern</small></dd></div>
-        <div><dt>Context</dt><dd>2026 · iOS beta<small>Early-stage wellness product</small></dd></div>
-        <div><dt>Collaborators</dt><dd>Product, design &amp; engineering<small>Working with fellow researchers</small></dd></div>
-        <div><dt>Methods &amp; tools</dt><dd>Research, audits &amp; study design<small>Maze · TestFlight · Figma / FigJam</small></dd></div>
-      </dl>
-
-      <div class="story-layout">
-        <nav class="contents" aria-label="Case study sections">
-          <p class="eyebrow">In this case study</p>
-          <a href="#challenge"><span>01</span> The challenge</a>
-          <a href="#research"><span>02</span> Research foundation</a>
-          <a href="#testing"><span>03</span> Making it testable</a>
-          <a href="#decisions"><span>04</span> Product questions</a>
-          <a href="#feedback"><span>05</span> The feedback journey</a>
-          <a href="#contributions"><span>06</span> Contributions &amp; limits</a>
-          <a href="#reflection"><span>07</span> Reflection</a>
-        </nav>
-
-        <article class="story" aria-label="Escape case study">
-          <section class="chapter" id="challenge" aria-labelledby="challenge-title">
-            <p class="eyebrow">01 / The challenge</p>
-            <h2 id="challenge-title">A personal experience.<br />An unclear path forward.</h2>
-            <p>Escape is an evolving self-care app that combines mood check-ins, guided wellness activities, and an AI companion. I worked across UX/UI design and UX research as the team prepared its mobile experience for broader beta feedback.</p>
-            <p>The work addressed two connected questions: could people understand and complete the core experience, and could the team collect useful evidence about what happened afterward?</p>
-            <p>A wellness experience asks people to share how they feel and act on the guidance they receive. Missing feedback, an unclear next step, or an interrupted activity can undermine confidence before someone has experienced the product's value.</p>
-            <blockquote>How might we identify where users lose clarity or confidence—and collect feedback grounded in actual product use?</blockquote>
-            <div class="two-up">
-              <div class="insight-card"><span class="card-index">The product question</span><h3>Can I complete the journey?</h3><p>Understand instructions, interpret feedback, find an activity, and recover when something goes wrong.</p></div>
-              <div class="insight-card"><span class="card-index">The research question</span><h3>What does the feedback mean?</h3><p>Distinguish an unclear interaction from a broken build, and an informed response from a first impression.</p></div>
-            </div>
-          </section>
-
-          <section class="chapter" id="research" aria-labelledby="research-title">
-            <p class="eyebrow">02 / Research foundation</p>
-            <h2 id="research-title">Direction before certainty.</h2>
-            <p>I contributed to a cross-functional, five-week exploratory research effort combining surveys, interviews, and usability research. The early work explored comfort with AI, the need for guidance, and barriers to immersive wellness experiences.</p>
-            <p>One small quantitative component involved four respondents aged 18–24. I treated it as exploratory: useful for shaping subsequent questions, without making population-level claims or turning a handful of responses into persuasive percentages.</p>
-            <div class="finding-list">
-              <div><span class="finding-number">A</span><div><h3>Guidance needs to be explicit.</h3><p>Early research raised questions about how people understand the experience and identify their next action.</p></div></div>
-              <div><span class="finding-number">B</span><div><h3>AI interest does not establish AI trust.</h3><p>A positive reaction to the concept does not tell us whether people understand a real response or feel able to question it.</p></div></div>
-              <div><span class="finding-number">C</span><div><h3>First use should reduce the burden.</h3><p>Complicated onboarding risks overwhelming the wellness experience it is meant to introduce.</p></div></div>
-            </div>
-            <p class="caption">These themes came from shared exploratory research. They informed what to investigate next; they are not independently verified market conclusions.</p>
-          </section>
-
-          <section class="chapter" id="testing" aria-labelledby="testing-title">
-            <p class="eyebrow">03 / Making it testable</p>
-            <h2 id="testing-title">Turn a broad product<br />into observable tasks.</h2>
-            <p>I developed a task-based testing flow in Maze around a realistic path through the app. It covered entry, AI-related feedback, discovery, a complete activity, and finding the profile.</p>
-            <figure class="exhibit">
-              <div class="exhibit-heading"><span class="eyebrow">Core-task journey</span><span class="status">Designed</span></div>
-              <ol class="task-flow">
-                <li><span class="step-number">01</span><h3>Enter</h3><p>Sign in or create an account</p></li>
-                <li><span class="step-number">02</span><h3>Check in</h3><p>Complete a mood check-in</p></li>
-                <li><span class="step-number">03</span><h3>Discover</h3><p>Find a Mind activity</p></li>
-                <li><span class="step-number">04</span><h3>Complete</h3><p>Start and finish Basic Breathing</p></li>
-                <li><span class="step-number">05</span><h3>Navigate</h3><p>Locate the profile</p></li>
-              </ol>
-              <figcaption>A reconstructed schematic of the planned testing flow, not an Escape screen or a report of completed task results.</figcaption>
-            </figure>
-            <p>I also reviewed TestFlight builds directly, documenting missing feedback states, navigation dead ends, and interruptions in core activities. Some issues could stop a participant before the intended task was complete.</p>
-            <div class="callout"><p class="eyebrow">A critical distinction</p><h3>A failed task can reveal a broken build.</h3><p>A frozen screen should not automatically become evidence that the navigation is confusing. I separated build-stability problems from interaction questions so a technical blocker would not contaminate the interpretation of usability results.</p></div>
-            <p>Without a verified results export, this planned flow does not support claims about completion rates, misclick rates, or measured improvement.</p>
-          </section>
-
-          <section class="chapter" id="decisions" aria-labelledby="decisions-title">
-            <p class="eyebrow">04 / Product questions</p>
-            <h2 id="decisions-title">Make the next decision<br />more precise.</h2>
-            <p>Research and build reviews informed conversations about onboarding, mood feedback, session continuity, and the AI companion's transparency. I focused on three questions.</p>
-            <div class="decision-list">
-              <div><h3>What has the AI interpreted?</h3><p>Explore whether people understand what information informed a response and how they might question or correct an interpretation. Personalization alone does not establish trust.</p></div>
-              <div><h3>What should happen next?</h3><p>Examine the transition from a mood check-in to an activity. People need a clear next action before they can discover the value of a guided session.</p></div>
-              <div><h3>What happens when the system fails?</h3><p>Evaluate loading, empty, interrupted, and recovery states as part of the core experience. A broken transition can undermine both continuity and confidence.</p></div>
-            </div>
-            <p>A teammate's onboarding recommendations explicitly drew on our team's earlier research. That is evidence of research informing shared design discussions; I do not claim to have independently authored or shipped those designs.</p>
-            <p>I also participated in reviews of emerging experiences, including AI Soundscapes and immersive visual elements, focusing on hierarchy, orientation, and how clearly the beta communicated available functionality.</p>
-          </section>
-
-          <section class="chapter" id="feedback" aria-labelledby="feedback-title">
-            <p class="eyebrow">05 / The feedback journey</p>
-            <h2 id="feedback-title">An invitation is not<br />an experience.</h2>
-            <p>TestFlight could distribute the app, but an invitation alone did not establish whether someone installed it, completed a session, or had enough exposure to comment on its value. Discord supported conversation, yet inconsistent engagement made it a weak single channel for structured outreach.</p>
-            <p>I helped coordinate TestFlight invitations and wrote welcome communication. Separately, I developed a proposed follow-up sequence using Brevo and Google Forms.</p>
-            <figure class="exhibit">
-              <div class="exhibit-heading"><span class="eyebrow">Beta participation → usable evidence</span><span class="status proposed">Proposed sequence</span></div>
-              <ol class="feedback-flow">
-                <li><span class="step-number">01</span><h3>Welcome</h3><p>Set expectations and explain how to begin.</p></li>
-                <li><span class="step-number">02</span><h3>Check in</h3><p>Ask about use and surface early blockers.</p></li>
-                <li><span class="step-number">03</span><h3>Short survey</h3><p>Investigate value, friction, and experience.</p></li>
-                <li><span class="step-number">04</span><h3>Review &amp; route</h3><p>Synthesize themes for the product team.</p></li>
-              </ol>
-              <figcaption>Invitations and welcome communication were coordinated. Automated follow-ups, survey reporting, and event-based triggers are described as proposed, not verified implementations.</figcaption>
-            </figure>
-            <h3 class="subheading">The timing trade-off</h3>
-            <div class="two-up">
-              <div class="insight-card"><span class="card-index">Initial proposal</span><h3>Time-based follow-up</h3><p>Simpler to launch while reliable in-app event signals were not established as available. Less precise about what each tester had experienced.</p></div>
-              <div class="insight-card"><span class="card-index">Future direction</span><h3>Exposure-aware follow-up</h3><p>Request feedback after a meaningful check-in, activity, or AI interaction. Requires reliable instrumentation and careful consent handling.</p></div>
-            </div>
-            <p>The plan also considered opt-outs, duplicate reminders, and avoiding requests for sensitive wellness information in public discussions. Willingness to recommend or pay remained a research question, not an achieved outcome.</p>
-          </section>
-
-          <section class="chapter" id="contributions" aria-labelledby="contributions-title">
-            <p class="eyebrow">06 / Contributions &amp; limits</p>
-            <h2 id="contributions-title">What I contributed.<br />What the evidence supports.</h2>
-            <div class="contribution-list">
-              <div><span class="status">Shared research</span><p>Exploratory research contributions within a cross-functional team, later cited in a teammate's onboarding recommendations.</p></div>
-              <div><span class="status">Designed &amp; evaluated</span><p>A task-based Maze flow, firsthand TestFlight build evaluations, issue documentation, and product feedback.</p></div>
-              <div><span class="status">Coordinated</span><p>Tester invitations and welcome communication to help participants enter the beta.</p></div>
-              <div><span class="status proposed">Proposed</span><p>A structured follow-up and survey process, with a path toward more relevant timing based on product exposure.</p></div>
-            </div>
-            <div class="evidence-note"><h3>The evidence boundary</h3><p>This work does not establish a verified increase in retention, onboarding completion, trust, or satisfaction. Those claims would require outcome data, a baseline, and confirmation of what shipped. The contribution was making research questions, testing prerequisites, and feedback needs more concrete.</p></div>
-          </section>
-
-          <section class="chapter" id="reflection" aria-labelledby="reflection-title">
-            <p class="eyebrow">07 / Reflection</p>
-            <h2 id="reflection-title">Protect what the<br />feedback actually means.</h2>
-            <p>This project shifted my view of UX research from collecting feedback to protecting the validity of what feedback means. A participant struggling with an unavailable activity is telling us something important, but it may not be what a conventional usability score implies.</p>
-            <p>I also learned that recruitment is only the beginning. Exposure, timing, voluntary participation, privacy, and the team's ability to act on findings determine whether outreach informs product decisions.</p>
-            <h3 class="subheading">What I would do next</h3>
-            <ol class="next-steps">
-              <li>Confirm core-path stability before interpreting task failures.</li>
-              <li>Run a bounded usability study with recorded outcomes and qualitative notes.</li>
-              <li>Connect exposure-aware feedback to reliable product events, comparing findings by build version.</li>
-            </ol>
-            <blockquote>Good research creates the conditions in which the answers are interpretable.</blockquote>
-            <p class="disclosure">About this account: based on my contributions within a collaborative product team. Internal screens, participant identities, confidential metrics, and unreleased materials are omitted. Diagrams are reconstructed schematics. This page does not claim company endorsement or publication approval.</p>
-          </section>
-        </article>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="description" content="Escape — a UX research case study by Wyatt Chou on usability, AI trust, and the design of an evidence-driven beta feedback process." />
+  <meta name="theme-color" content="#0d0f13" />
+  <meta property="og:title" content="Escape — UX Research Case Study | Wyatt Chou" />
+  <meta property="og:description" content="Helping an evolving AI wellness experience become easier to understand, evaluate, and improve." />
+  <meta property="og:type" content="article" />
+  <title>Escape — UX Research Case Study | Wyatt Chou</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Forum&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip">Skip to content</a>
+  <nav class="site-nav" aria-label="Case study navigation">
+    <div class="shell nav-inner">
+      <a class="brand" href="../#home" aria-label="Wyatt Chou, return to portfolio">
+        <span class="brand-mark" aria-hidden="true">WC</span> Wyatt Chou
+      </a>
+      <div class="nav-right">
+        <a href="#research">Research</a>
+        <a href="#testing">Testing</a>
+        <a href="#beta">Beta strategy</a>
+        <a href="#outcomes">Contributions</a>
+        <a class="back" href="../#projects"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12.5 4.5L7 10l5.5 5.5M7.5 10h10"/></svg> Portfolio</a>
       </div>
+    </div>
+  </nav>
+  <main id="main">
+    <header class="shell hero">
+      <div>
+        <div class="eyebrow">Selected work / UX research / 2026</div>
+        <h1>Escape<span style="color:var(--accent)">.</span><br><em>Beyond</em> the interface.</h1>
+        <p class="hero-sub">UX research, usability evaluation, and beta feedback planning for an evolving AI wellness app.</p>
+        <div class="hero-pills" aria-label="Focus areas">
+          <span class="pill">UX RESEARCH</span><span class="pill">USABILITY TESTING</span><span class="pill">PRODUCT THINKING</span><span class="pill">BETA EXPERIENCE</span>
+        </div>
+      </div>
+      <figure class="hero-visual" aria-labelledby="concept-caption">
+        <div class="halo" aria-hidden="true"></div>
+        <div class="phone" aria-hidden="true"><div class="phone-inner"><div class="notch"></div><div class="device-label">a moment to reset.</div><div class="signal"><span></span><span></span><span></span></div><div class="screen-line"></div><div class="screen-line small"></div><div class="screen-button"></div></div></div>
+        <div class="float-note note-a" aria-hidden="true"><strong>Understand the user</strong><span>RESEARCH → INSIGHT</span></div>
+        <div class="float-note note-b" aria-hidden="true"><strong>Improve the feedback loop</strong><span>TEST → LEARN → ITERATE</span></div>
+        <figcaption class="visual-caption" id="concept-caption"><strong>Concept illustration</strong><span>Not an Escape screen or a design deliverable.</span></figcaption>
+      </figure>
+    </header>
+    <div class="shell metadata" aria-label="Project overview">
+      <div><span class="meta-label">Company</span><span class="meta-value">Escape · AI wellness app</span></div>
+      <div><span class="meta-label">My role</span><span class="meta-value">UX Research Intern<br>Previously UX/UI Design Intern</span></div>
+      <div><span class="meta-label">Timeline</span><span class="meta-value">2026 · Ongoing as documented</span></div>
+      <div><span class="meta-label">Focus</span><span class="meta-value">Research, product evaluation,<br>beta feedback design</span></div>
+    </div>
 
-      <section class="closing" aria-labelledby="closing-title">
-        <p class="eyebrow">Thanks for reading</p>
-        <h2 id="closing-title">Let's build something<br /><em>thoughtful.</em></h2>
-        <div class="closing-links"><a class="button" href="../#contact">Get in touch <span aria-hidden="true">→</span></a><a class="text-link" href="../#projects">Back to projects <span aria-hidden="true">→</span></a></div>
-      </section>
-    </main>
-    <footer><p>Wyatt Chou · UX Research &amp; Product Design</p><a href="#main">Back to top ↑</a></footer>
-  </body>
+    <div class="reading-layout">
+      <aside class="contents">
+        <nav aria-label="All case study sections">
+          <p class="contents-label">In this case study</p>
+          <ol>
+            <li><a href="#overview"><span>01</span> Context</a></li>
+            <li><a href="#research"><span>02</span> Research foundation</a></li>
+            <li><a href="#testing"><span>03</span> Task evaluation</a></li>
+            <li><a href="#collaboration"><span>04</span> Design collaboration</a></li>
+            <li><a href="#beta"><span>05</span> Beta strategy</a></li>
+            <li><a href="#outcomes"><span>06</span> Contributions</a></li>
+            <li><a href="#reflection"><span>07</span> Reflection</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <div class="case-content">
+    <section class="shell section" id="overview" aria-labelledby="overview-title">
+      <div class="section-top">
+        <div><div class="section-index">01 / Context</div><h2 class="section-title" id="overview-title">The real challenge.</h2></div>
+        <div>
+          <p class="section-lead">An AI wellness app can feel beautifully immersive—and still leave people unsure what to do next.</p>
+          <div class="body-copy">
+            <p>Escape brings mood check-ins, guided wellness activities, and an AI companion into a single mobile experience. I worked across UX/UI and UX research while the team developed and tested that experience.</p>
+            <p>The challenge had two layers. First, could users navigate the core experience and understand the system’s response to them? Second, could the team collect feedback that reflected meaningful product use rather than a first impression—or a broken build?</p>
+            <p>My contributions connected exploratory research, evaluation of TestFlight builds, structured task design, and the planning of a more deliberate beta follow-up experience. <strong>I did not independently design or ship the entire product.</strong></p>
+          </div>
+          <div class="pullquote"><div class="tiny">Guiding question</div><p>How might we find the moments where people lose clarity or confidence—and make the resulting feedback reliable enough to guide decisions?</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="evidence-band" id="research" aria-labelledby="research-title">
+      <div class="shell band-content">
+        <div>
+          <div class="kicker">02 / Research foundation</div>
+          <h2 id="research-title">Start with questions.<br>Not conclusions.</h2>
+          <p class="status-row"><span class="work-status">Shared research</span></p>
+          <p>I contributed to a five-week cross-functional research effort involving exploratory surveys, interviews, and usability research. Early signals pointed toward the importance of clear guidance, understandable AI behavior, and comfortable onboarding.</p>
+        </div>
+        <div class="research-notes">
+          <div class="research-note">Early quantitative responses were drawn from a very small exploratory group; the findings were directional, not representative.</div>
+          <div class="research-note">A favorable reaction to AI or immersive experiences does not prove that first-use interactions are understandable.</div>
+          <div class="research-note">Research themes became hypotheses to investigate through tasks and build reviews—not claims of solved problems.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell section" id="testing" aria-labelledby="testing-title">
+      <div class="section-top">
+        <div><div class="section-index">03 / Task-based evaluation</div><h2 class="section-title" id="testing-title">Follow the experience.</h2></div>
+        <div><p class="section-lead">Instead of asking only whether users liked the interface, I designed tasks around things they needed to accomplish.</p><div class="body-copy"><p>I developed a Maze testing flow for a realistic first-use journey. The planned sequence covered orientation, interpretation, discovery, session continuity, and navigation. It is presented here as study design, without claiming completed sessions or measured results.</p></div></div>
+      </div>
+      <div class="exhibit-heading"><p class="divider-label">Core-task journey</p><span class="work-status">Designed · Maze study flow</span></div>
+      <div class="journey" aria-label="Five-stage usability task journey">
+        <div class="journey-step"><div class="journey-dot">01</div><h3>Enter the app</h3><p>Sign in or create an account.</p></div>
+        <div class="journey-step"><div class="journey-dot">02</div><h3>Check in</h3><p>Complete a mood interaction.</p></div>
+        <div class="journey-step"><div class="journey-dot">03</div><h3>Discover</h3><p>Find a relevant guided activity.</p></div>
+        <div class="journey-step"><div class="journey-dot">04</div><h3>Complete</h3><p>Start and finish Basic Breathing.</p></div>
+        <div class="journey-step"><div class="journey-dot">05</div><h3>Reorient</h3><p>Locate the profile area.</p></div>
+      </div>
+      <span class="caption">Task-flow reconstruction based on research planning. This graphic does not represent a measured conversion funnel or actual app screens.</span>
+      <div class="exhibit-heading"><p class="divider-label">Questions surfaced during evaluation</p><span class="work-status">Evaluated · TestFlight builds</span></div>
+      <div class="finding-grid">
+        <article class="finding"><span class="finding-num">01</span><h3>Does the system make sense?</h3><p>People need to understand that a mood or AI interaction registered their input and what the next step will be. Missing feedback states make that relationship unclear.</p></article>
+        <article class="finding"><span class="finding-num">02</span><h3>Can the session continue?</h3><p>Controls, timers, previews, and transitions need to behave consistently. A failed action can interrupt the intended experience and invalidate downstream test steps.</p></article>
+        <article class="finding"><span class="finding-num">03</span><h3>Can users regain orientation?</h3><p>The route back to profile or another feature should be understandable without researcher intervention, especially after completing a guided activity.</p></article>
+      </div>
+      <div class="divider-label">The distinction that mattered</div>
+      <div class="contrast">
+        <div class="contrast-item"><h4>Build failure</h4><p>An activity cannot advance because a control or transition is broken. The task outcome primarily identifies a technical blocker.</p><span class="status">Flag & retest</span></div>
+        <div class="contrast-item"><h4>Usability friction</h4><p>The interaction works, but a person hesitates, misinterprets a label, or struggles to find the next action.</p><span class="status">Investigate the design</span></div>
+      </div>
+      <span class="caption">I evaluated TestFlight builds and documented issues. This distinction is an interpretation framework, not a claim that every observed failure had a proven root cause.</span>
+    </section>
+
+    <section class="shell section" id="collaboration" aria-labelledby="collab-title">
+      <div class="section-top"><div><div class="section-index">04 / Research into design</div><h2 class="section-title" id="collab-title">Make the next decision clearer.</h2></div>
+        <div><p class="section-lead">Research becomes useful when it changes the questions designers and engineers ask—not when it is presented as a decorative chart.</p>
+          <p class="status-row"><span class="work-status">Shared design discussions</span></p>
+          <div class="body-copy">
+            <p>I used research and build observations to contribute to discussions around onboarding, mood feedback, AI transparency, session continuity, and emerging features such as AI Soundscapes.</p>
+            <p>Some of the most productive questions concerned the system's boundaries: <strong>What did the AI interpret? Can a user correct it? What happens when an activity fails? Does the interface distinguish a loading state from an unresponsive one?</strong></p>
+            <p>Another designer's onboarding recommendations drew on earlier research from our team. That is evidence of cross-functional influence—not evidence that I authored the final onboarding design or that those proposals shipped.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell section" id="beta" aria-labelledby="beta-title">
+      <div class="section-top"><div><div class="section-index">05 / Beta experience</div><h2 class="section-title" id="beta-title">An invitation is not an insight.</h2></div>
+        <div><p class="section-lead">Beta operations and UX research are connected—but they measure very different things.</p><div class="body-copy"><p>I helped coordinate TestFlight invitations and welcome communication, and developed a separate proposal for follow-up messages and a concise feedback survey. The intended sequence moved from access to experience, then to feedback and team review.</p><p>TestFlight could distribute the app; Discord could support conversation. Neither by itself established whether a tester had completed a meaningful session. That shaped the feedback plan.</p></div></div>
+      </div>
+      <div class="flowchart" role="group" aria-label="Conceptual beta feedback lifecycle">
+        <p class="flow-status-summary">Coordinated invitations and welcome · Proposed follow-up and synthesis</p>
+        <div class="flow-grid">
+          <div class="flow-node"><span class="flow-num">01 / ACCESS</span><strong>Invitation</strong><span>Grant beta access</span><span class="work-status">Coordinated</span></div>
+          <div class="flow-node"><span class="flow-num">02 / ORIENT</span><strong>Welcome</strong><span>Set expectations</span><span class="work-status">Coordinated</span></div>
+          <div class="flow-node"><span class="flow-num">03 / EXPERIENCE</span><strong>Try the app</strong><span>Allow meaningful use</span><span class="work-status neutral">Tester activity</span></div>
+          <div class="flow-node"><span class="flow-num">04 / RESPOND</span><strong>Check-in & survey</strong><span>Capture specific friction</span><span class="work-status proposed">Proposed</span></div>
+          <div class="flow-node"><span class="flow-num">05 / LEARN</span><strong>Synthesize</strong><span>Route findings to team</span><span class="work-status proposed">Proposed</span></div>
+        </div>
+        <div class="flowcaption">Process illustration. Invitations and welcome messaging were coordinated; the full follow-up automation was proposed and is not presented here as implemented.</div>
+      </div>
+      <div class="divider-label">An intentional implementation trade-off</div>
+      <table class="tradeoffs" aria-label="Time-based versus behavior-based beta follow-up"><thead><tr><th>Approach</th><th>Advantage</th><th>Failure mode</th><th>Implication</th></tr></thead>
+      <tbody><tr><td data-label="Approach"><strong>Time-based</strong><br>Initial proposal</td><td data-label="Advantage">Simple to administer without app-event instrumentation</td><td data-label="Failure mode">A survey might reach someone who has barely used the product</td><td data-label="Implication">Use cautious language and check exposure before interpreting feedback</td></tr>
+      <tr><td data-label="Approach"><strong>Behavior-based</strong><br>Future concept</td><td data-label="Advantage">More relevant outreach following a meaningful activity</td><td data-label="Failure mode">Requires trustworthy events, consent, and suppression logic</td><td data-label="Implication">Only personalize when the instrumentation and safeguards are dependable</td></tr></tbody></table>
+      <div class="pullquote"><div class="tiny">Research quality principle</div><p>The number of people invited to a beta is not the number of people whose experience we understand.</p></div>
+    </section>
+
+    <section class="shell section" id="outcomes" aria-labelledby="outcomes-title">
+      <div class="section-top"><div><div class="section-index">06 / Contributions & evidence</div><h2 class="section-title" id="outcomes-title">What I actually contributed.</h2></div>
+        <div><p class="section-lead">A case study should distinguish work delivered, work proposed, and impact that has not yet been measured.</p><div class="body-copy"><p>My strongest contributions were in shaping research questions, evaluating the live beta experience, documenting blockers, and planning how the team would hear from testers more consistently.</p></div></div>
+      </div>
+      <div class="output-list">
+        <article class="output"><div class="category">Contributed & documented</div><h3>Research and usability evaluation</h3><p>Exploratory team research, a structured Maze task flow, and firsthand review of beta builds, including functional issues affecting core journeys.</p></article>
+        <article class="output"><div class="category">Coordinated</div><h3>Beta invitations and welcome</h3><p>TestFlight tester onboarding and initial communication to help participants understand how to start exploring the app.</p></article>
+        <article class="output"><div class="category">Designed / proposed</div><h3>Feedback operating plan</h3><p>A welcome, check-in, and survey sequence—with follow-up logic, channel choices, and safeguards for a future more personalized version.</p></article>
+      </div>
+      <div class="impact-banner">
+        <div><div class="label">What the work established</div><p>A clearer framework for separating technical blockers from usability problems, specifying testable product journeys, and collecting feedback after more informed app exposure.</p></div>
+        <div><div class="label">What I cannot claim yet</div><p>No verified improvement in retention, onboarding completion, satisfaction, or AI trust. Those outcomes would require comparable baseline data, confirmed shipping status, and attributable measurement.</p></div>
+      </div>
+    </section>
+
+    <section class="shell section" id="reflection" aria-labelledby="reflection-title">
+      <div class="section-top"><div><div class="section-index">07 / Reflection</div><h2 class="section-title" id="reflection-title">Better evidence, better choices.</h2></div>
+        <div><p class="section-lead">The most important shift in my thinking was learning to protect the meaning of research—not just collect more of it.</p><div class="body-copy"><p>A person who cannot finish an activity because a button is broken is telling us something important, but not necessarily that the interaction design is difficult. Likewise, a beta participant who received an invitation but never explored the app cannot answer the same questions as someone who completed multiple sessions.</p><p>I learned to think about research quality as a chain: stable tasks, clear observation, participant context, careful interpretation, and a team process for acting on the results.</p></div></div>
+      </div>
+      <div class="divider-label">What I would validate next</div>
+      <div class="next-steps">
+        <div class="next"><div class="n">01</div><h3>Stabilize the core journey</h3><p>Confirm key actions work on the target build before evaluating completion or navigation comprehension.</p></div>
+        <div class="next"><div class="n">02</div><h3>Run bounded usability sessions</h3><p>Record actual task outcomes, errors, and participant reasoning, linked to build versions.</p></div>
+        <div class="next"><div class="n">03</div><h3>Connect feedback to exposure</h3><p>Use appropriate, consented product events where reliable; compare feedback by meaningful activity rather than invitation alone.</p></div>
+      </div>
+    </section>
+
+      </div>
+    </div>
+
+    <section class="shell closing" aria-labelledby="closing-title">
+      <div class="eyebrow">The takeaway</div>
+      <h2 id="closing-title">Good research doesn't just ask better questions. <em>It makes the answers usable.</em></h2>
+      <p>Escape taught me that the conditions surrounding a study—product stability, timing, transparency, and collaboration—are part of the user experience too. That perspective now shapes how I approach both research and product design.</p>
+      <p class="signature">— Wyatt Chou</p>
+      <div class="closing-actions"><a class="contact-button" href="../#contact">Get in touch <span aria-hidden="true">→</span></a><a class="projects-link" href="../#projects">Back to projects</a></div>
+    </section>
+    <div class="shell disclosure"><strong>Portfolio disclosure.</strong> This case study reflects my individual contributions within a collaborative team. The diagrams are conceptual reconstructions; no private tester data, internal screenshots, confidential metrics, or unreleased assets are displayed. Study plans and proposed processes are labeled separately from completed work.</div>
+  </main>
+  <footer class="footer"><div class="shell footer-inner"><p>© 2026 Wyatt Chou. Case study prepared for portfolio use.</p><a href="../#projects">← Return to all projects</a></div></footer>
+</body>
 </html>
