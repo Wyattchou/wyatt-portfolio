@@ -1,10 +1,11 @@
 import { useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const FORM_ENDPOINT = "https://formspree.io/f/mwllegqj";
 
 function Contact() {
+  const shouldReduceMotion = useReducedMotion();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -86,12 +87,13 @@ function Contact() {
     <section className="section dark" id="contact">
       <motion.div
         className="section-content column"
-        initial={{ opacity: 0, y: 35 }}
+        initial={shouldReduceMotion ? false : { opacity: 0, y: 35 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
       >
         <h2>Contact</h2>
-        <h5>Get In Touch</h5>
+        <p className="section-subtitle">Have a project or opportunity in mind? Let’s talk.</p>
 
         <form className="contact-form" onSubmit={handleSubmit} aria-busy={isSubmitting}>
           <label className="sr-only" htmlFor="contact-name">Your name</label>

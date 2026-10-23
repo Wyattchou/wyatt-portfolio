@@ -1,81 +1,92 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import survey from "../assets/surveyform.jpg";
 import prize from "../assets/PrizeKicks.jpg";
-import report from "../assets/ReportPicture.jpg";
 import review from "../assets/review.jpg";
 import sixseven from "../assets/sixseven.jpg";
 import escape from "../assets/escape.png";
 
-const projects = [
-  {
-    title: "Survey Form",
-    desc: "A functional survey form with validation and dynamic feedback.",
-    img: survey,
-    link: "https://students.gaim.ucf.edu/~wy190358/dig3716c/assignment2/survey.html"
-  },
-  {
-    title: "PrizeKicks Shoe App",
-    desc: "UX/UI prototype focused on simplifying shoe discovery.",
-    img: prize,
-    link: "https://www.figma.com/proto/g1FkQt3tQyQ1Gdxgk2Nc4s/PrizeKicks-Hi-fidelity-Wireframe"
-  },
-  {
-    title: "UX Case Study",
-    desc: "Research-driven UX case study for PrizeKicks.",
-    img: report,
-    link: "https://docs.google.com/document/d/1V3x0ltTuR5CWEiImp74WDQC_mwC-aSvKg12nnNBdP5I/edit"
-  },
-  {
-    title: "CMS Review System",
-    desc: "Backend system with user roles and CRUD functionality.",
-    img: review,
-    link: "https://students.gaim.ucf.edu/~wy190358/dig3134c/assignments/assignment04/login.php"
-  },
-  {
-    title: "SixSeven Documentary",
-    desc: "A project exploring YouTube’s evolution through production.",
-    img: sixseven,
-    link: "https://docs.google.com/document/d/1q9EMDw3Avt2A926N5WDv6vlDTna2cxksk0F8ky2HUc0/edit"
-  },
+const selectedProjects = [
   {
     title: "Escape App",
-    desc: "UX Research Intern | UX Case Study",
-    img: escape,
-    link: `${import.meta.env.BASE_URL}escape-case-study/index.html`,
-    isCaseStudy: true
+    category: "Internship · UX Research",
+    description: "Research, beta-build evaluation, and a plan for collecting more useful feedback in an AI wellness experience.",
+    image: escape,
+    imageTone: "light",
+    links: [{ label: "Read Case Study", href: `${import.meta.env.BASE_URL}escape-case-study/index.html` }]
+  },
+  {
+    title: "PrizeKicks",
+    category: "UX/UI Design · Coursework",
+    description: "A shoe-shopping concept exploring simpler discovery through UX research and an interactive prototype.",
+    image: prize,
+    links: [
+      { label: "Read Case Study", href: "https://docs.google.com/document/d/1V3x0ltTuR5CWEiImp74WDQC_mwC-aSvKg12nnNBdP5I/edit", external: true },
+      { label: "View Prototype", href: "https://www.figma.com/proto/g1FkQt3tQyQ1Gdxgk2Nc4s/PrizeKicks-Hi-fidelity-Wireframe", external: true }
+    ]
   }
 ];
 
+const additionalProjects = [
+  {
+    title: "CMS Review System",
+    category: "Web Development",
+    description: "A backend project with user roles and tools to create, read, update, and delete reviews.",
+    image: review,
+    links: [{ label: "View Live Project", href: "https://students.gaim.ucf.edu/~wy190358/dig3134c/assignments/assignment04/login.php", external: true }]
+  },
+  {
+    title: "Survey Form",
+    category: "Front-End Development",
+    description: "A functional survey form with input validation and dynamic feedback.",
+    image: survey,
+    links: [{ label: "View Live Project", href: "https://students.gaim.ucf.edu/~wy190358/dig3716c/assignment2/survey.html", external: true }]
+  },
+  {
+    title: "SixSeven Documentary",
+    category: "Media Production",
+    description: "A production project exploring the evolution of YouTube.",
+    image: sixseven,
+    links: [{ label: "View Project", href: "https://docs.google.com/document/d/1q9EMDw3Avt2A926N5WDv6vlDTna2cxksk0F8ky2HUc0/edit", external: true }]
+  }
+];
 
-
-function Projects() {
+function ProjectCard({ project, heading: Heading = "h3" }) {
   return (
-    <section className="section dark" id="projects">
-      <motion.div
-        className="section-content column"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2>Projects</h2>
-        <h5>My Recent Work</h5>
-
-        <div className="projects-grid">
-          {projects.map((p, index) => (
-            <motion.div
-              key={index}
-              className="project-card"
-              whileHover={{ scale: 1.05 }}
-            >
-              <img src={p.img} alt={p.title} />
-              <h3>{p.title}</h3>
-              <p>{p.desc}</p>
-              <a href={p.link} target={p.isCaseStudy ? undefined : "_blank"} rel={p.isCaseStudy ? undefined : "noopener noreferrer"} className="btn">
-                {p.isCaseStudy ? "Read Case Study" : "View Project"}
-              </a>
-            </motion.div>
+    <article className="project-card">
+      <img src={project.image} className={project.imageTone === "light" ? "project-image-light" : undefined} alt={`${project.title} project preview`} loading="lazy" decoding="async" />
+      <div className="project-copy">
+        <p className="project-category">{project.category}</p>
+        <Heading>{project.title}</Heading>
+        <p className="project-description">{project.description}</p>
+        <div className="project-actions">
+          {project.links.map((link, index) => (
+            <a key={link.href} href={link.href} target={link.external ? "_blank" : undefined} rel={link.external ? "noopener noreferrer" : undefined} className={index === 0 ? "btn" : "btn secondary-btn"}>
+              {link.label}<span className="sr-only">: {project.title}{link.external ? " (opens in a new tab)" : ""}</span>
+            </a>
           ))}
         </div>
+      </div>
+    </article>
+  );
+}
+
+function Projects() {
+  const shouldReduceMotion = useReducedMotion();
+  return (
+    <section className="section dark" id="projects" aria-labelledby="projects-title">
+      <motion.div className="section-content column" initial={shouldReduceMotion ? false : { opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}>
+        <h2 id="projects-title">Selected Work</h2>
+        <p className="section-subtitle">Research and design projects, from questions to interfaces.</p>
+        <div className="projects-grid selected-projects">
+          {selectedProjects.map((project) => <ProjectCard key={project.title} project={project} />)}
+        </div>
+        <section className="additional-work" aria-labelledby="additional-work-title">
+          <h3 id="additional-work-title">Additional Work</h3>
+          <p className="section-subtitle">Development and production projects that round out my practice.</p>
+          <div className="projects-grid additional-projects">
+            {additionalProjects.map((project) => <ProjectCard key={project.title} project={project} heading="h4" />)}
+          </div>
+        </section>
       </motion.div>
     </section>
   );

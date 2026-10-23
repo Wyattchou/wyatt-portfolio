@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 const skills = [
   {
@@ -20,16 +20,18 @@ const skills = [
 ];
 
 function Skills() {
+  const shouldReduceMotion = useReducedMotion();
   return (
     <section className="section" id="skills">
       <motion.div
         className="section-content column"
-        initial={{ opacity: 0, y: 35 }}
+        initial={shouldReduceMotion ? false : { opacity: 0, y: 35 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
       >
         <h2>Skills</h2>
-        <h5>My Expertise</h5>
+        <p className="section-subtitle">Methods and tools I bring to the work.</p>
 
         <div className="skill-categories">
           {skills.map(({ category, items }) => (
